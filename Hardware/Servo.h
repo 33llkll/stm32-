@@ -2,6 +2,6 @@
 #define __SERVO_H
 
 void Servo_Init(void);	
-void PWM_Start();
+void PWM_Start(void);
 
 #endif

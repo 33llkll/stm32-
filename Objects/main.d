@@ -28,7 +28,9 @@
 .\objects\main.o: .\Library\stm32f10x_usart.h
 .\objects\main.o: .\Library\stm32f10x_wwdg.h
 .\objects\main.o: .\Library\misc.h
+.\objects\main.o: .\Hardware\InfraredSensor.h
 .\objects\main.o: .\System\Delay.h
 .\objects\main.o: .\Hardware\OLED.h
 .\objects\main.o: .\Hardware\Servo.h
 .\objects\main.o: .\Hardware\Key.h
+.\objects\main.o: .\System\Check.h
