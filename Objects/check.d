@@ -33,3 +33,5 @@
 .\objects\check.o: .\Hardware\Key.h
 .\objects\check.o: System\Delay.h
 .\objects\check.o: .\Hardware\Servo.h
+.\objects\check.o: .\Hardware\Serial.h
+.\objects\check.o: D:\BaiduNetdiskDownload\keil\ARM\ARMCC\Bin\..\include\stdio.h
