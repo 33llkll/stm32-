@@ -19,32 +19,28 @@ uint8_t Key_GetNum(void)
 	if (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_12) == 0)
 	{
 		Delay_ms(20);
-		while (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_12) == 0)
-			;
+		while (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_12) == 0);
 		Delay_ms(20);
 		Key_Num = 1;
 	}
 	else if (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_13) == 0)
 	{
 		Delay_ms(20);
-		while (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_13) == 0)
-			;
+		while (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_13) == 0);
 		Delay_ms(20);
 		Key_Num = 2;
 	}
 	else if (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_14) == 0)
 	{
 		Delay_ms(20);
-		while (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_14) == 0)
-			;
+		while (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_14) == 0);
 		Delay_ms(20);
 		Key_Num = 3;
 	}
 	else if (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_15) == 0)
 	{
 		Delay_ms(20);
-		while (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_15) == 0)
-			;
+		while (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_15) == 0);
 		Delay_ms(20);
 		Key_Num = 4;
 	}

@@ -1,7 +1,7 @@
 .\objects\infraredsensor.o: Hardware\InfraredSensor.c
 .\objects\infraredsensor.o: .\start\stm32f10x.h
 .\objects\infraredsensor.o: .\start\core_cm3.h
-.\objects\infraredsensor.o: D:\BaiduNetdiskDownload\keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\infraredsensor.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\infraredsensor.o: .\start\system_stm32f10x.h
 .\objects\infraredsensor.o: .\user\stm32f10x_conf.h
 .\objects\infraredsensor.o: .\Library\stm32f10x_adc.h

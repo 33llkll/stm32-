@@ -1,7 +1,7 @@
 .\objects\check.o: System\Check.c
 .\objects\check.o: .\start\stm32f10x.h
 .\objects\check.o: .\start\core_cm3.h
-.\objects\check.o: D:\BaiduNetdiskDownload\keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\check.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\check.o: .\start\system_stm32f10x.h
 .\objects\check.o: .\user\stm32f10x_conf.h
 .\objects\check.o: .\Library\stm32f10x_adc.h
@@ -34,4 +34,4 @@
 .\objects\check.o: System\Delay.h
 .\objects\check.o: .\Hardware\Servo.h
 .\objects\check.o: .\Hardware\Serial.h
-.\objects\check.o: D:\BaiduNetdiskDownload\keil\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\check.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdio.h
