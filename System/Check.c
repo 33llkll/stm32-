@@ -18,15 +18,15 @@ void Check_main(void)
 	{
 		PWM_Start1();
 	}
-	else if (KeyNum == 2 || Flag == 1)
+	else if (KeyNum == 2 || Flag == 2)
 	{
 		PWM_Start2();
 	}
-	else if (KeyNum == 3 || Flag == 1)
+	else if (KeyNum == 3 || Flag == 3)
 	{
 		PWM_Start3();
 	}
-	else if (KeyNum == 4 || Flag == 1)
+	else if (KeyNum == 4 || Flag == 4)
 	{
 		PWM_Start4();
 	}
