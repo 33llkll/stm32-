@@ -66,45 +66,49 @@ void handler(uint8_t flag)
 {
 	if (flag == 1)
 	{
-		if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_5) == 1)
+		if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_5) == 0)
 		{
 			PWM_SetCompare1(90 / 180.0 * 2000 + 500);
 			OLED_ShowString(1, 1, "Unrecyclable");
 		}else
 		{
+			OLED_Clear();
 			PWM_SetCompare1(0 / 180.0 * 2000 + 500);
 			OLED_ShowString(1, 1, "close");
 		}
 	}else if (flag == 2)
 	{
-		if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_6) == 1)
+		if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_6) == 0)
 		{
 			PWM_SetCompare1(90 / 180.0 * 2000 + 500);
 			OLED_ShowString(1, 1, "Unrecyclable");
 		}else
 		{
+			OLED_Clear();
 			PWM_SetCompare1(0 / 180.0 * 2000 + 500);
 			OLED_ShowString(1, 1, "close");
 		}
 	}else if (flag == 3)
 	{
-		if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_7) == 1)
+		if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_7) == 0)
 		{
 			PWM_SetCompare1(90 / 180.0 * 2000 + 500);
 			OLED_ShowString(1, 1, "Hazardous");
 		}else
 		{
+			OLED_Clear();
 			PWM_SetCompare1(0 / 180.0 * 2000 + 500);
 			OLED_ShowString(1, 1, "close");
 		}
 	}else if (flag == 4)
 	{
-		if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_8) == 1)
+		if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_8) == 0)
 		{
 			PWM_SetCompare1(90 / 180.0 * 2000 + 500);
 			OLED_ShowString(1, 1, "Other");
 		}else
 		{
+			OLED_Clear();
 			PWM_SetCompare1(0 / 180.0 * 2000 + 500);
 			OLED_ShowString(1, 1, "close");
 		}
