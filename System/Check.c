@@ -6,27 +6,26 @@
 #include "Servo.h"
 #include "Serial.h"
 
-uint8_t Flag;
 uint8_t KeyNum;
 uint8_t RxData;
+uint8_t fflag;
 
 void Check_main(void)
 {
 	KeyNum = Key_GetNum();
-	Flag = flag_Get();
-	if (KeyNum == 1 || Flag == 1)
+	if (KeyNum == 1)
 	{
 		PWM_Start1();
 	}
-	else if (KeyNum == 2 || Flag == 2)
+	else if (KeyNum == 2)
 	{
 		PWM_Start2();
 	}
-	else if (KeyNum == 3 || Flag == 3)
+	else if (KeyNum == 3)
 	{
 		PWM_Start3();
 	}
-	else if (KeyNum == 4 || Flag == 4)
+	else if (KeyNum == 4)
 	{
 		PWM_Start4();
 	}
@@ -34,21 +33,28 @@ void Check_main(void)
 void Remote_Control(void)
 {
 	RxData = Serial_GetRxData();
-	if (RxData == 1)
+	if (fflag == RxData)
+	{
+		return;
+	}
+	else
+	{
+		fflag = RxData;
+	}
+	if (fflag == 1)
 	{
 		PWM_Start1();
 	}
-	else if (RxData == 2)
+	else if (fflag == 2)
 	{
 		PWM_Start2();
 	}
-	else if (RxData == 3)
+	else if (fflag == 3)
 	{
 		PWM_Start3();
 	}
-	else if (RxData == 4)
+	else if (fflag == 4)
 	{
 		PWM_Start4();
 	}
-
 }

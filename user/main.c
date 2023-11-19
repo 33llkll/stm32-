@@ -7,8 +7,9 @@
 int main(void)
 {
 	Servo_Init();
-	OLED_ShowString(1, 1, "close");	
+	OLED_ShowString(1, 1, "close");
 	Show_SelfInformation();
+
 	while (1)
 	{
 		Check_main();

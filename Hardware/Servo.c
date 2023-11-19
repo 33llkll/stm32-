@@ -4,6 +4,7 @@
 #include "Key.h"
 #include "Delay.h"
 #include "InfraredSensor.h"
+#include "Serial.h"
 
 void Servo_Init(void)		
 {
@@ -11,6 +12,7 @@ void Servo_Init(void)
 	OLED_Init();
 	Key_Init();
 	InfraredSensor_Init();
+	Serial_Init();
 }
 void PWM_Start1(void)
 {
@@ -59,4 +61,52 @@ void Show_SelfInformation(void)
 {
 	OLED_ShowString(3, 1, "5006210101btz");
 	OLED_ShowString(4, 1, "5006210108lfz");
+}
+void handler(uint8_t flag)
+{
+	if (flag == 1)
+	{
+		if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_5) == 1)
+		{
+			PWM_SetCompare1(90 / 180.0 * 2000 + 500);
+			OLED_ShowString(1, 1, "Unrecyclable");
+		}else
+		{
+			PWM_SetCompare1(0 / 180.0 * 2000 + 500);
+			OLED_ShowString(1, 1, "close");
+		}
+	}else if (flag == 2)
+	{
+		if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_6) == 1)
+		{
+			PWM_SetCompare1(90 / 180.0 * 2000 + 500);
+			OLED_ShowString(1, 1, "Unrecyclable");
+		}else
+		{
+			PWM_SetCompare1(0 / 180.0 * 2000 + 500);
+			OLED_ShowString(1, 1, "close");
+		}
+	}else if (flag == 3)
+	{
+		if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_7) == 1)
+		{
+			PWM_SetCompare1(90 / 180.0 * 2000 + 500);
+			OLED_ShowString(1, 1, "Hazardous");
+		}else
+		{
+			PWM_SetCompare1(0 / 180.0 * 2000 + 500);
+			OLED_ShowString(1, 1, "close");
+		}
+	}else if (flag == 4)
+	{
+		if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_8) == 1)
+		{
+			PWM_SetCompare1(90 / 180.0 * 2000 + 500);
+			OLED_ShowString(1, 1, "Other");
+		}else
+		{
+			PWM_SetCompare1(0 / 180.0 * 2000 + 500);
+			OLED_ShowString(1, 1, "close");
+		}
+	}
 }

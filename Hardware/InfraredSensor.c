@@ -1,4 +1,5 @@
 #include "stm32f10x.h"                  // Device header
+#include "Servo.h"
 uint8_t flag;
 void InfraredSensor_Init(void)
 {
@@ -22,7 +23,7 @@ void InfraredSensor_Init(void)
 	EXTI_InitStructure.EXTI_Line = EXTI_Line7 | EXTI_Line5 | EXTI_Line6 | EXTI_Line8;
 	EXTI_InitStructure.EXTI_LineCmd = ENABLE;
 	EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
-	EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling;
+	EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising_Falling;
 	EXTI_Init(&EXTI_InitStructure);
 	
 	
@@ -31,13 +32,6 @@ void InfraredSensor_Init(void)
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1; //抢占
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1; //响应
 	NVIC_Init(&NVIC_InitStructure);
-}
-
-uint8_t flag_Get(void)
-{
-	uint8_t Flag = flag;
-	flag = 0;
-	return Flag;
 }
 
 void EXTI9_5_IRQHandler(void)                                                                                                                                                                       
@@ -77,4 +71,5 @@ void EXTI9_5_IRQHandler(void)
 		}
 		EXTI_ClearITPendingBit(EXTI_Line8);
 	}
+	handler(flag);
 }

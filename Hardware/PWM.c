@@ -87,3 +87,4 @@ void PWM_SetCompare4(uint16_t Compare)
 {
 	TIM_SetCompare4(TIM2, Compare);
 }
+
