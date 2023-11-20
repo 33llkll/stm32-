@@ -69,7 +69,8 @@ void handler(uint8_t flag)
 		if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_5) == 0)
 		{
 			PWM_SetCompare1(90 / 180.0 * 2000 + 500);
-			OLED_ShowString(1, 1, "Unrecyclable");
+			OLED_ShowString(1, 1, "Recyclable");
+			Serial_SendString("Recyclable");
 		}else
 		{
 			OLED_Clear();
@@ -82,6 +83,7 @@ void handler(uint8_t flag)
 		{
 			PWM_SetCompare1(90 / 180.0 * 2000 + 500);
 			OLED_ShowString(1, 1, "Unrecyclable");
+			Serial_SendString("Unrecyclable");
 		}else
 		{
 			OLED_Clear();
@@ -94,6 +96,7 @@ void handler(uint8_t flag)
 		{
 			PWM_SetCompare1(90 / 180.0 * 2000 + 500);
 			OLED_ShowString(1, 1, "Hazardous");
+			Serial_SendString("Hazardous");
 		}else
 		{
 			OLED_Clear();
@@ -106,6 +109,7 @@ void handler(uint8_t flag)
 		{
 			PWM_SetCompare1(90 / 180.0 * 2000 + 500);
 			OLED_ShowString(1, 1, "Other");
+			Serial_SendString("Other");
 		}else
 		{
 			OLED_Clear();
