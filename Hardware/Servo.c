@@ -18,6 +18,7 @@ void PWM_Start1(void)
 {
 	PWM_SetCompare1(90 / 180.0 * 2000 + 500);
 	OLED_ShowString(1, 1, "Recyclable");
+	Serial_SendString("Recyclable");
 	Delay_ms(1000);
 
 	PWM_SetCompare1(0 / 180.0 * 2000 + 500);
@@ -29,6 +30,7 @@ void PWM_Start2(void)
 {
 	PWM_SetCompare2(90 / 180.0 * 2000 + 500);
 	OLED_ShowString(1, 1, "Unrecyclable");
+	Serial_SendString("Unrecyclable");
 	Delay_ms(1000);
 
 	PWM_SetCompare2(0 / 180.0 * 2000 + 500);
@@ -40,6 +42,7 @@ void PWM_Start3(void)
 {
 	PWM_SetCompare3(90 / 180.0 * 2000 + 500);
 	OLED_ShowString(1, 1, "Hazardous");
+	Serial_SendString("Hazardous");
 	Delay_ms(1000);
 
 	PWM_SetCompare3(0 / 180.0 * 2000 + 500);
@@ -51,6 +54,7 @@ void PWM_Start4(void)
 {
 	PWM_SetCompare4(90 / 180.0 * 2000 + 500);
 	OLED_ShowString(1, 1, "Other");
+	Serial_SendString("Other");
 	Delay_ms(1000);
 
 	PWM_SetCompare4(0 / 180.0 * 2000 + 500);
