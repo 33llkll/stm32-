@@ -22,7 +22,7 @@ void PWM_Start1(void)
 	Delay_ms(1000);
 
 	PWM_SetCompare1(0 / 180.0 * 2000 + 500);
-	OLED_Clear();
+	OLED_ShowString(1, 1, "                ");
 	OLED_ShowString(1, 1, "close");
 }
 
@@ -34,7 +34,7 @@ void PWM_Start2(void)
 	Delay_ms(1000);
 
 	PWM_SetCompare2(0 / 180.0 * 2000 + 500);
-	OLED_Clear();
+	OLED_ShowString(1, 1, "                ");
 	OLED_ShowString(1, 1, "close");
 }
 
@@ -46,7 +46,7 @@ void PWM_Start3(void)
 	Delay_ms(1000);
 
 	PWM_SetCompare3(0 / 180.0 * 2000 + 500);
-	OLED_Clear();
+	OLED_ShowString(1, 1, "                ");
 	OLED_ShowString(1, 1, "close");
 }
 
@@ -58,7 +58,7 @@ void PWM_Start4(void)
 	Delay_ms(1000);
 
 	PWM_SetCompare4(0 / 180.0 * 2000 + 500);
-	OLED_Clear();
+	OLED_ShowString(1, 1, "                ");
 	OLED_ShowString(1, 1, "close");
 }
 void Show_SelfInformation(void)
@@ -77,7 +77,7 @@ void handler(uint8_t flag)
 			Serial_SendString("Recyclable");
 		}else
 		{
-			OLED_Clear();
+			OLED_ShowString(1, 1, "                ");
 			PWM_SetCompare1(0 / 180.0 * 2000 + 500);
 			OLED_ShowString(1, 1, "close");
 		}
@@ -90,7 +90,7 @@ void handler(uint8_t flag)
 			Serial_SendString("Unrecyclable");
 		}else
 		{
-			OLED_Clear();
+			OLED_ShowString(1, 1, "                ");
 			PWM_SetCompare1(0 / 180.0 * 2000 + 500);
 			OLED_ShowString(1, 1, "close");
 		}
@@ -103,7 +103,7 @@ void handler(uint8_t flag)
 			Serial_SendString("Hazardous");
 		}else
 		{
-			OLED_Clear();
+			OLED_ShowString(1, 1, "                ");
 			PWM_SetCompare1(0 / 180.0 * 2000 + 500);
 			OLED_ShowString(1, 1, "close");
 		}
@@ -116,7 +116,7 @@ void handler(uint8_t flag)
 			Serial_SendString("Other");
 		}else
 		{
-			OLED_Clear();
+			OLED_ShowString(1, 1, "                ");
 			PWM_SetCompare1(0 / 180.0 * 2000 + 500);
 			OLED_ShowString(1, 1, "close");
 		}
