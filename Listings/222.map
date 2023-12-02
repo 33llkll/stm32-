@@ -194,6 +194,9 @@ Section Cross References
     servo.o(i.handler) refers to pwm.o(i.PWM_SetCompare1) for PWM_SetCompare1
     servo.o(i.handler) refers to oled.o(i.OLED_ShowString) for OLED_ShowString
     servo.o(i.handler) refers to serial.o(i.Serial_SendString) for Serial_SendString
+    servo.o(i.handler) refers to pwm.o(i.PWM_SetCompare2) for PWM_SetCompare2
+    servo.o(i.handler) refers to pwm.o(i.PWM_SetCompare3) for PWM_SetCompare3
+    servo.o(i.handler) refers to pwm.o(i.PWM_SetCompare4) for PWM_SetCompare4
     infraredsensor.o(i.EXTI9_5_IRQHandler) refers to stm32f10x_exti.o(i.EXTI_GetITStatus) for EXTI_GetITStatus
     infraredsensor.o(i.EXTI9_5_IRQHandler) refers to stm32f10x_gpio.o(i.GPIO_ReadInputDataBit) for GPIO_ReadInputDataBit
     infraredsensor.o(i.EXTI9_5_IRQHandler) refers to stm32f10x_exti.o(i.EXTI_ClearITPendingBit) for EXTI_ClearITPendingBit
