@@ -1,5 +1,7 @@
 #include "stm32f10x.h"                  // Device header
 #include "Servo.h"
+#include "Check.h"
+
 uint8_t flag;
 void InfraredSensor_Init(void)
 {

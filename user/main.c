@@ -12,7 +12,7 @@ int main(void)
 
 	while (1)
 	{
-		Check_main();
 		Remote_Control();
+		Check_main();
 	}
 }

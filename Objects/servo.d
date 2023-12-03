@@ -34,4 +34,3 @@
 .\objects\servo.o: .\System\Delay.h
 .\objects\servo.o: Hardware\InfraredSensor.h
 .\objects\servo.o: Hardware\Serial.h
-.\objects\servo.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdio.h

@@ -34,4 +34,5 @@
 .\objects\check.o: System\Delay.h
 .\objects\check.o: .\Hardware\Servo.h
 .\objects\check.o: .\Hardware\Serial.h
-.\objects\check.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\check.o: .\Hardware\PWM.h
+.\objects\check.o: D:\keil5\ARM\ARMCC\Bin\..\include\string.h

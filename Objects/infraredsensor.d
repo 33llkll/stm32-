@@ -29,3 +29,4 @@
 .\objects\infraredsensor.o: .\Library\stm32f10x_wwdg.h
 .\objects\infraredsensor.o: .\Library\misc.h
 .\objects\infraredsensor.o: Hardware\Servo.h
+.\objects\infraredsensor.o: .\System\Check.h
