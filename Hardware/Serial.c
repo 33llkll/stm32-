@@ -1,9 +1,8 @@
 #include "stm32f10x.h"                  // Device header
 
 
-char Serial_RxPacket[100];
+uint8_t Serial_RxData;
 uint8_t Serial_RxFlag;
-
 void Serial_Init(void) {
     GPIO_InitTypeDef GPIO_InitStructure;
     USART_InitTypeDef USART_InitStructure;
@@ -101,41 +100,17 @@ uint8_t Serial_GetRxFlag(void)
 	return 0;
 }
 
+uint8_t Serial_GetRxData(void)
+{
+	return Serial_RxData;
+}
 
 void USART1_IRQHandler(void)
 {
-	static uint8_t RxState = 0;
-	static uint8_t pRxPacket = 0;	
 	if (USART_GetITStatus(USART1, USART_IT_RXNE) == SET)
 	{
-		uint8_t RxData = USART_ReceiveData(USART1);
-		if (RxState == 0)
-		{
-			if (RxData == '@' && Serial_RxFlag == 0)
-			{
-				RxState = 1;
-				pRxPacket = 0;
-			}
-		}
-		else if (RxState == 1)
-		{
-			if(RxData == '\r')
-				RxState = 2;
-			else
-			{
-				Serial_RxPacket[pRxPacket] = RxData;
-				pRxPacket ++;
-			}
-		}
-		else if (RxState == 2)
-		{
-			if (RxData == '\n')
-			{
-				RxState = 0;
-				Serial_RxPacket[pRxPacket] = '\0';
-				Serial_RxFlag = 1;
-			}
-		}
+		Serial_RxData = USART_ReceiveData(USART1);
+		Serial_RxFlag = 1;
 		USART_ClearITPendingBit(USART1, USART_IT_RXNE);
 	}
 }

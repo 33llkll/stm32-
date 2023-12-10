@@ -1,7 +1,7 @@
 .\objects\servo.o: Hardware\Servo.c
 .\objects\servo.o: .\start\stm32f10x.h
 .\objects\servo.o: .\start\core_cm3.h
-.\objects\servo.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\servo.o: D:\BaiduNetdiskDownload\keil\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\servo.o: .\start\system_stm32f10x.h
 .\objects\servo.o: .\user\stm32f10x_conf.h
 .\objects\servo.o: .\Library\stm32f10x_adc.h
@@ -34,3 +34,5 @@
 .\objects\servo.o: .\System\Delay.h
 .\objects\servo.o: Hardware\InfraredSensor.h
 .\objects\servo.o: Hardware\Serial.h
+.\objects\servo.o: Hardware\LED.h
+.\objects\servo.o: Hardware\MPU6050.h

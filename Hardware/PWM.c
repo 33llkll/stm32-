@@ -9,7 +9,7 @@ void PWM_Init(void)
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
 
-	GPIO_Initstructure.GPIO_Mode = GPIO_Mode_AF_PP; // 复用推挽输出 让定时器控制引脚
+	GPIO_Initstructure.GPIO_Mode = GPIO_Mode_AF_PP; // 复用推挽输出 让片上外设控制引脚
 	GPIO_Initstructure.GPIO_Pin = GPIO_Pin_0;
 	GPIO_Initstructure.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_Init(GPIOA, &GPIO_Initstructure);

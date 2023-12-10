@@ -6,6 +6,7 @@
 
 int main(void)
 {
+	
 	Servo_Init();
 	OLED_ShowString(1, 1, "close");
 	Show_SelfInformation();
@@ -14,5 +15,7 @@ int main(void)
 	{
 		Remote_Control();
 		Check_main();
+		LightSensor_check();
+		Balance_Detection();
 	}
 }
