@@ -1,7 +1,7 @@
 .\objects\serial.o: Hardware\Serial.c
 .\objects\serial.o: .\start\stm32f10x.h
 .\objects\serial.o: .\start\core_cm3.h
-.\objects\serial.o: D:\BaiduNetdiskDownload\keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\serial.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\serial.o: .\start\system_stm32f10x.h
 .\objects\serial.o: .\user\stm32f10x_conf.h
 .\objects\serial.o: .\Library\stm32f10x_adc.h

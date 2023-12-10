@@ -1,7 +1,7 @@
 .\objects\mpu6050.o: Hardware\MPU6050.c
 .\objects\mpu6050.o: .\start\stm32f10x.h
 .\objects\mpu6050.o: .\start\core_cm3.h
-.\objects\mpu6050.o: D:\BaiduNetdiskDownload\keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\mpu6050.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\mpu6050.o: .\start\system_stm32f10x.h
 .\objects\mpu6050.o: .\user\stm32f10x_conf.h
 .\objects\mpu6050.o: .\Library\stm32f10x_adc.h

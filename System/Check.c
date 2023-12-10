@@ -53,7 +53,9 @@ void Check_main(void)
 		OLED_ShowString(2, 1, "R FULL");
 		Delay_ms(1000);
 		OLED_ShowString(2, 1, "                ");
-		
+		Serial_TxPacket[0] = 0x07;
+		Serial_TxPacket[1] = 0x07;
+		Serial_SendPacket();
 	}
 	if(num2 >= 5)
 	{
@@ -61,7 +63,9 @@ void Check_main(void)
 		OLED_ShowString(2, 1, "K FULL");
 		Delay_ms(1000);
 		OLED_ShowString(2, 1, "                ");
-		
+		Serial_TxPacket[0] = 0x07;
+		Serial_TxPacket[1] = 0x07;
+		Serial_SendPacket();
 	}
 	if(num3 >= 5)
 	{
@@ -69,7 +73,9 @@ void Check_main(void)
 		OLED_ShowString(2, 1, "H FULL");
 		Delay_ms(1000);
 		OLED_ShowString(2, 1, "                ");
-		
+		Serial_TxPacket[0] = 0x07;
+		Serial_TxPacket[1] = 0x07;
+		Serial_SendPacket();
 	}
 	if(num4 >= 5)
 	{
@@ -77,7 +83,9 @@ void Check_main(void)
 		OLED_ShowString(2, 1, "O FULL");
 		Delay_ms(1000);
 		OLED_ShowString(2, 1, "                ");
-		
+		Serial_TxPacket[0] = 0x07;
+		Serial_TxPacket[1] = 0x07;
+		Serial_SendPacket();
 	}
 }
 void Remote_Control(void)
@@ -85,6 +93,7 @@ void Remote_Control(void)
 	if (Serial_GetRxFlag() == 1)
 	{
 		RxData = Serial_GetRxData();
+		
 		if (RxData == 1)
 		{
 			
@@ -115,12 +124,16 @@ void Remote_Control(void)
 		else if (RxData == 5)
 		{
 			LED1_ON();
-			Serial_SendString("A 05 05 A");
+			Serial_TxPacket[0] = 0x05;
+			Serial_TxPacket[1] = 0x05;
+			Serial_SendPacket();
 		}
 		else if (RxData == 6)
 		{
 			LED1_OFF();
-			Serial_SendString("A 06 06 A");
+			Serial_TxPacket[0] = 0x06;
+			Serial_TxPacket[1] = 0x06;
+			Serial_SendPacket();
 		}	
 	}
 }
@@ -133,7 +146,9 @@ void handler(uint8_t flag)
 		{
 			PWM_SetCompare1(90 / 180.0 * 2000 + 500);
 			OLED_ShowString(1, 1, "Recyclable");
-			Serial_SendString("A 01 01 A");
+			Serial_TxPacket[0] = 0x01;
+			Serial_TxPacket[1] = 0x01;
+			Serial_SendPacket();
 			num1++;
 		}else
 		{
@@ -147,7 +162,9 @@ void handler(uint8_t flag)
 		{
 			PWM_SetCompare2(90 / 180.0 * 2000 + 500);
 			OLED_ShowString(1, 1, "Kitchen");
-			Serial_SendString("A 02 02 A");
+			Serial_TxPacket[0] = 0x02;
+			Serial_TxPacket[1] = 0x02;
+			Serial_SendPacket();
 			num2++;
 		}else
 		{
@@ -161,7 +178,9 @@ void handler(uint8_t flag)
 		{
 			PWM_SetCompare3(90 / 180.0 * 2000 + 500);
 			OLED_ShowString(1, 1, "Hazardous");
-			Serial_SendString("A 03 03 A");
+			Serial_TxPacket[0] = 0x03;
+			Serial_TxPacket[1] = 0x03;
+			Serial_SendPacket();
 			num3++;
 		}else
 		{
@@ -175,7 +194,9 @@ void handler(uint8_t flag)
 		{
 			PWM_SetCompare4(90 / 180.0 * 2000 + 500);
 			OLED_ShowString(1, 1, "Other");
-			Serial_SendString("A 04 04 A");
+			Serial_TxPacket[0] = 0x04;
+			Serial_TxPacket[1] = 0x04;
+			Serial_SendPacket();
 			num4++;
 		}else
 		{
@@ -193,13 +214,17 @@ void LightSensor_check(void)
 	{
 		LED1_ON();
 		lsFlag = 0;
-		Serial_SendString("A 05 05 A");
+		Serial_TxPacket[0] = 0x05;
+		Serial_TxPacket[1] = 0x05;
+		Serial_SendPacket();
 	}
 	else if (LightSensor_Get() == 0 && lsFlag == 0)
 	{
 		lsFlag = 1;
 		LED1_OFF();
-		Serial_SendString("A 06 06 A");
+		Serial_TxPacket[0] = 0x06;
+		Serial_TxPacket[1] = 0x06;
+		Serial_SendPacket();
 	}
 }
 void Balance_Detection(void)
@@ -225,7 +250,9 @@ void Balance_Detection(void)
 		if(Flags == 1)
 		{
 			OLED_ShowString(2,1,"Falling");
-			Serial_SendString("A 07 07 A");
+			Serial_TxPacket[0] = 0x07;
+			Serial_TxPacket[1] = 0x07;
+			Serial_SendPacket();
 			Flags = 0;
 		}
 		

@@ -1,6 +1,6 @@
 #include "stm32f10x.h"                  // Device header
 
-
+uint8_t Serial_TxPacket[4];
 uint8_t Serial_RxData;
 uint8_t Serial_RxFlag;
 void Serial_Init(void) {
@@ -89,6 +89,14 @@ void Serial_SendNumber(uint32_t Number, uint8_t Length)
 	}
 }
 
+void Serial_SendPacket(void)
+{
+	Serial_SendByte(0xAA);
+	Serial_SendByte(0x55);
+	Serial_SendArray(Serial_TxPacket, 2);
+	Serial_SendByte(0x55);
+	Serial_SendByte(0xAA);
+}
 
 uint8_t Serial_GetRxFlag(void)
 {

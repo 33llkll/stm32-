@@ -1,7 +1,7 @@
 .\objects\main.o: user\main.c
 .\objects\main.o: .\start\stm32f10x.h
 .\objects\main.o: .\start\core_cm3.h
-.\objects\main.o: D:\BaiduNetdiskDownload\keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\main.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\main.o: .\start\system_stm32f10x.h
 .\objects\main.o: .\user\stm32f10x_conf.h
 .\objects\main.o: .\Library\stm32f10x_adc.h

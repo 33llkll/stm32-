@@ -19,7 +19,9 @@ void Servo_Init(void)
 }
 void PWM_Start1(void)
 {
-	Serial_SendString("A 01 01 A");
+	Serial_TxPacket[0] = 0x01;
+	Serial_TxPacket[1] = 0x01;
+	Serial_SendPacket();
 	PWM_SetCompare1(90 / 180.0 * 2000 + 500);
 	OLED_ShowString(1, 1, "Recyclable");
 	Delay_ms(1000);
@@ -31,7 +33,9 @@ void PWM_Start1(void)
 
 void PWM_Start2(void)
 {
-	Serial_SendString("A 02 02 A");
+	Serial_TxPacket[0] = 0x02;
+	Serial_TxPacket[1] = 0x02;
+	Serial_SendPacket();
 	PWM_SetCompare2(90 / 180.0 * 2000 + 500);
 	OLED_ShowString(1, 1, "Kitchen");
 	
@@ -44,7 +48,9 @@ void PWM_Start2(void)
 
 void PWM_Start3(void)
 {
-	Serial_SendString("A 03 03 A");
+	Serial_TxPacket[0] = 0x03;
+	Serial_TxPacket[1] = 0x03;
+	Serial_SendPacket();
 	PWM_SetCompare3(90 / 180.0 * 2000 + 500);
 	OLED_ShowString(1, 1, "Hazardous");
 	
@@ -57,7 +63,9 @@ void PWM_Start3(void)
 
 void PWM_Start4(void)
 {
-	Serial_SendString("A 04 04 A");
+	Serial_TxPacket[0] = 0x04;
+	Serial_TxPacket[1] = 0x04;
+	Serial_SendPacket();
 	PWM_SetCompare4(90 / 180.0 * 2000 + 500);
 	OLED_ShowString(1, 1, "Other");
 	
