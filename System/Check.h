@@ -6,4 +6,6 @@ void handler(uint8_t flag);
 void Remote_Control(void);
 void LightSensor_check(void);
 void Balance_Detection(void);
+void Temp_Check(void);
+
 #endif

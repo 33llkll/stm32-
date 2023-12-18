@@ -32,3 +32,4 @@
 .\objects\main.o: .\Hardware\OLED.h
 .\objects\main.o: .\Hardware\Servo.h
 .\objects\main.o: .\System\Check.h
+.\objects\main.o: .\Hardware\AD.h

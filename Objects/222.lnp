@@ -36,6 +36,7 @@
 ".\objects\serial.o"
 ".\objects\lightsensor.o"
 ".\objects\mpu6050.o"
+".\objects\ad.o"
 ".\objects\main.o"
 ".\objects\stm32f10x_it.o"
 --strict --scatter ".\Objects\222.sct"

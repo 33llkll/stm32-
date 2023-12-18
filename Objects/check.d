@@ -38,5 +38,6 @@
 .\objects\check.o: .\Hardware\LightSensor.h
 .\objects\check.o: .\Hardware\Led.h
 .\objects\check.o: .\Hardware\MPU6050.h
+.\objects\check.o: .\Hardware\AD.h
 .\objects\check.o: D:\keil5\ARM\ARMCC\Bin\..\include\math.h
 .\objects\check.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdlib.h

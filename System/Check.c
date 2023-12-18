@@ -9,6 +9,7 @@
 #include "LightSensor.h"
 #include "Led.h"
 #include "MPU6050.h"
+#include "AD.h"
 #include <math.h>
 #include <stdlib.h>
 
@@ -19,6 +20,7 @@ uint8_t lsFlag;
 uint8_t Flags;
 float roll;
 float pitch;
+double temp;
 uint8_t num1 = 0, num2 = 0, num3 = 0, num4 = 0;
 int16_t AX, AY, AZ, GX, GY, GZ;
 
@@ -227,6 +229,20 @@ void LightSensor_check(void)
 		Serial_SendPacket();
 	}
 }
+
+void Temp_Check(void)
+{
+	AD_Init();
+	temp = GetTemp();
+	if(temp >= 30.0)
+	{
+		Serial_TxPacket[0] = 0x07;
+		Serial_TxPacket[1] = 0x07;
+		Serial_SendPacket();
+	}
+	Delay_ms(500);
+}
+
 void Balance_Detection(void)
 {
 	//角度阈值
